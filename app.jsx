@@ -12,8 +12,8 @@ const { useEffect, useMemo, useState } = React;
 
 // -------------------- Utilities --------------------
 function useGrid(isLarge) {
-  const cols = isLarge ? 4 : 3;
-  const rows = isLarge ? 2 : 5;
+  const cols = isLarge ? 4 : 5;
+  const rows = isLarge ? 2 : 3;
   return { cols, rows };
 }
 
