@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from "react";
 /**
  * Responsive Moodboard Tileboard
  * - Full-bleed grid, square-ish tiles (fills entire viewport)
- * - Desktop: 5×3, Mobile (<640px): 2×4
+ * - Desktop: 3×4, Mobile (<640px): 2×4
  * - First tile is a header showing selected Aesthetic × Place and a Refresh button
  * - Remaining tiles are shuffled from the two selected categories
  * - Images fade in on load; subtle pop-in animation on refresh
@@ -155,8 +155,8 @@ function useWindowSize() {
 function useGrid() {
   const { w } = useWindowSize();
   const isMobile = w < 640;
-  const cols = isMobile ? 2 : 5;
-  const rows = isMobile ? 4 : 3;
+  const cols = isMobile ? 2 : 3;
+  const rows = 4;
   return { isMobile, cols, rows };
 }
 
