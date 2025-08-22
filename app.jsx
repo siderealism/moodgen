@@ -3,7 +3,7 @@ const { useEffect, useMemo, useState } = React;
 /**
  * Responsive Moodboard Tileboard
  * - Full-bleed grid, square-ish tiles (fills entire viewport)
- * - Desktop: 3×4 (rows × cols), Mobile (<640px): 4×2
+ * - Toggle between small 3×4 and large 2×3 layouts via floating action button
  * - Image tiles span two columns while word tiles span one; header tile is 1×1
  * - Remaining tiles are shuffled from the two selected categories
  * - Images fade in on load; subtle pop-in animation on refresh
@@ -11,32 +11,10 @@ const { useEffect, useMemo, useState } = React;
  */
 
 // -------------------- Utilities --------------------
-function isClient() {
-  return typeof window !== "undefined" && typeof document !== "undefined";
-}
-
-function useWindowSize() {
-  const [size, setSize] = useState({
-    w: isClient() ? window.innerWidth : 1024,
-    h: isClient() ? window.innerHeight : 768,
-  });
-
-  useEffect(() => {
-    if (!isClient()) return;
-    const onResize = () => setSize({ w: window.innerWidth, h: window.innerHeight });
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  return size;
-}
-
-function useGrid() {
-  const { w } = useWindowSize();
-  const isMobile = w < 640;
-  const cols = isMobile ? 2 : 4;
-  const rows = isMobile ? 4 : 3;
-  return { isMobile, cols, rows };
+function useGrid(isLarge) {
+  const cols = isLarge ? 2 : 3;
+  const rows = isLarge ? 3 : 4;
+  return { cols, rows };
 }
 
 function useConfig() {
@@ -164,7 +142,8 @@ function HeaderTile({ a, p, onRefresh }) {
 
 // -------------------- App --------------------
 function App() {
-  const { cols, rows } = useGrid();
+  const [isLarge, setIsLarge] = useState(false);
+  const { cols, rows } = useGrid(isLarge);
   const CONFIG = useConfig();
   const totalCells = cols * rows;
   const headerSpan = 1;
@@ -308,6 +287,13 @@ function App() {
           <Tile key={`${nonce}-${i}-${t._cat}-${t.text || t.src}`} data={t} mountDelay={delays[i] || 0} />
         ))}
       </div>
+      <button
+        onClick={() => setIsLarge(l => !l)}
+        className="fixed bottom-4 right-4 w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm shadow-md border border-zinc-300 flex items-center justify-center text-zinc-700 hover:bg-white/80 transition"
+        aria-label="Toggle grid layout"
+      >
+        {isLarge ? '3×4' : '2×3'}
+      </button>
     </div>
   );
 }
