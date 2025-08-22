@@ -6,6 +6,10 @@ A single-page React app that deals a random vibe from the curated image collecti
 
 The app fetches local files, so the browser must load it over HTTP.
 Opening `index.html` directly from the filesystem triggers CORS errors.
+Scripts are authored in JSX and modern JavaScript; `index.html` loads Babel with the `env` and `react` presets so they compile in the browser.
+Tailwind CSS is pulled from its CDN to style the page without a build step.
+Image tiles span two columns while word tiles take one and the header tile is 1×1, producing a tightly packed grid with three rows and four columns on larger screens and four rows by two columns on small screens.
+Each moodboard always shows at least one image and one word from both the selected aesthetic and place so every vibe is represented.
 Start the included static server:
 
 ```bash
