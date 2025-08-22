@@ -64,6 +64,10 @@ function sample(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function randomColor() {
+  return '#' + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
+}
+
 // -------------------- Tiles --------------------
 function ImageTile({ src, alt }) {
   const [loaded, setLoaded] = useState(false);
@@ -182,6 +186,9 @@ function App() {
     const a = (selection.aesthetic.tiles || []).map(t => ({ ...t, _cat: selection.aesthetic.name }));
     const p = (selection.place.tiles || []).map(t => ({ ...t, _cat: selection.place.name }));
     const mixed = shuffle([...a, ...p]);
+    const palette = mixed
+      .filter(t => t.type === "word" && t.color)
+      .map(t => t.color);
 
     const needCells = Math.max(0, totalCells - headerSpan); // account for header span
     const chosen = [];
@@ -191,7 +198,9 @@ function App() {
       const t = mixed[i % mixed.length];
       const span = t.type === "image" ? 2 : 1;
       if (used + span <= needCells) {
-        chosen.push({ ...t, span });
+        const color =
+          t.type === "word" ? t.color || sample(palette) || randomColor() : undefined;
+        chosen.push({ ...t, span, color });
         used += span;
       }
       i++;
@@ -199,7 +208,8 @@ function App() {
     if (used < needCells) {
       const filler = mixed.find(t => t.type === "word");
       while (used < needCells && filler) {
-        chosen.push({ ...filler, span: 1 });
+        const color = filler.color || sample(palette) || randomColor();
+        chosen.push({ ...filler, span: 1, color });
         used += 1;
       }
     }
