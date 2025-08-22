@@ -231,6 +231,22 @@ function App() {
     return { aesthetic, place };
   }, [nonce, CONFIG]);
 
+  const aPalette = useMemo(() => {
+    if (!selection.aesthetic) return [];
+    const tiles = selection.aesthetic.tiles || [];
+    const metaPal = (selection.aesthetic.meta && selection.aesthetic.meta.palette) || [];
+    const wordColors = tiles.filter(t => t.type === "word" && t.color).map(t => t.color);
+    return [...metaPal, ...wordColors];
+  }, [selection]);
+
+  const bgColor = useMemo(() => sample(aPalette) || randomColor(), [aPalette, nonce]);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      document.body.style.backgroundColor = bgColor;
+    }
+  }, [bgColor]);
+
   // Build the mixed tile list for visible grid (minus header)
   const data = useMemo(() => {
     if (!selection.aesthetic || !selection.place) return [];
@@ -352,7 +368,6 @@ function App() {
           100% { opacity: 1; transform: scale(1) translateY(0px); }
         }
         html, body, #root { margin: 0; padding: 0; }
-        body { background: #fff; }
         .tile-wrap { position: relative; overflow: hidden; backface-visibility: hidden; transform: translateZ(0); outline: 1px solid transparent; }
       `}</style>
 
@@ -363,6 +378,7 @@ function App() {
             gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
             gridAutoFlow: "dense",
             gap: 0,
+            backgroundColor: bgColor,
           }}
         >
         {/* Header tile in first cell */}
