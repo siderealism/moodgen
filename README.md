@@ -4,14 +4,22 @@ A single-page React app that deals a random vibe from the curated image collecti
 
 ## Local development
 
-No build step is required. Use any static file server or open `index.html` directly in your browser.
+The app fetches local files, so the browser must load it over HTTP.
+Opening `index.html` directly from the filesystem triggers CORS errors.
+Start the included static server:
 
 ```bash
-# from the repository root
+npm start
+```
+
+This launches at [http://localhost:3000](http://localhost:3000).
+You can use any other static server if you prefer, for example:
+
+```bash
 python -m http.server 8000
 ```
 
-Visit [http://localhost:8000](http://localhost:8000) in your browser.
+and visit [http://localhost:8000](http://localhost:8000) in your browser.
 
 ## Updating images
 
