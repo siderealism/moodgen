@@ -194,11 +194,25 @@ function App() {
       }
     };
 
-    // Ensure at least one word and one image from each category
-    takeMandatory(aWords, 1);
-    takeMandatory(aImages, 2);
-    takeMandatory(pWords, 1);
-    takeMandatory(pImages, 2);
+    if (needCells < 6) {
+      // Prefer two images and one word when space is tight (3×2 grid)
+      const takeImage = arr => takeMandatory(arr, 2);
+      // Grab images first to guarantee two
+      takeImage(aImages);
+      takeImage(pImages);
+      if (mandatory.filter(t => t.type === "image").length < 2) takeImage(aImages);
+      if (mandatory.filter(t => t.type === "image").length < 2) takeImage(pImages);
+
+      // Then take a single word from either category
+      const [w1, w2] = shuffle([aWords, pWords]);
+      if (!takeMandatory(w1, 1)) takeMandatory(w2, 1);
+    } else {
+      // Ensure at least one word and one image from each category
+      takeMandatory(aWords, 1);
+      takeMandatory(aImages, 2);
+      takeMandatory(pWords, 1);
+      takeMandatory(pImages, 2);
+    }
 
     const pool = shuffle([...aWords, ...aImages, ...pWords, ...pImages]);
     const chosen = [];
@@ -292,7 +306,7 @@ function App() {
         className="fixed bottom-4 right-4 w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm shadow-md border border-zinc-300 flex items-center justify-center text-zinc-700 hover:bg-white/80 transition"
         aria-label="Toggle grid layout"
       >
-        {isLarge ? '3×2' : '4×3'}
+        {isLarge ? '−' : '+'}
       </button>
     </div>
   );
