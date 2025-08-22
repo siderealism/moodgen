@@ -41,8 +41,8 @@ function useIsMobile() {
 
 function useGrid(isLarge) {
   const isMobile = useIsMobile();
-  const cols = isMobile ? (isLarge ? 2 : 3) : (isLarge ? 4 : 3);
-  const rows = isMobile ? (isLarge ? 4 : 6) : (isLarge ? 2 : 5);
+  const cols = isMobile ? (isLarge ? 2 : 3) : (isLarge ? 4 : 5);
+  const rows = isMobile ? (isLarge ? 4 : 5) : (isLarge ? 2 : 3);
   return { cols, rows };
 }
 
