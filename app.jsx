@@ -3,7 +3,7 @@ const { useEffect, useMemo, useState } = React;
 /**
  * Responsive Moodboard Tileboard
  * - Full-bleed grid, square-ish tiles (fills entire viewport)
- * - Toggle between small 2×4 and large 5×3 layouts via floating action button
+ * - Toggle between small 5×3 and large 4×2 layouts via floating action button
  * - Image tiles span two columns while word tiles span one; header tile is 1×1
  * - Remaining tiles are shuffled from the two selected categories
  * - Images fade in on load; subtle pop-in animation on refresh
@@ -12,8 +12,8 @@ const { useEffect, useMemo, useState } = React;
 
 // -------------------- Utilities --------------------
 function useGrid(isLarge) {
-  const cols = isLarge ? 5 : 2;
-  const rows = isLarge ? 3 : 4;
+  const cols = isLarge ? 4 : 5;
+  const rows = isLarge ? 2 : 3;
   return { cols, rows };
 }
 
