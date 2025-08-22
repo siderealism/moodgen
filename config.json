@@ -2,14 +2,6 @@
   "aesthetics": [
     {
       "name": "Miami Vice Neon Noir",
-      "meta": {
-        "subtitle": "electric / neon / retro‑futurism",
-        "palette": [
-          "#00E7F9",
-          "#FF4FA5",
-          "#4F2B7E"
-        ]
-      },
       "tiles": [
         {
           "type": "word",
@@ -38,41 +30,41 @@
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1630354225636-9846415c1d21?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Neon ‘Starlite’ sign glowing pink against a palm tree, Miami Beach:contentReference[oaicite:2]{index=2}"
+          "src": "img/miaminoir/Home Alone 2_ Lost in New York - 1992.png",
+          "alt": "Home Alone 2_ Lost in New York - 1992"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1578742903196-42ce22984ec9?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Classic yellow and white car parked by the Avalon hotel under green neon lights:contentReference[oaicite:3]{index=3}"
+          "src": "img/miaminoir/Miami Vice - Brother's Keeper.png",
+          "alt": "Miami Vice - Brother's Keeper"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1562147624-cc4020943c73?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Palm tree silhouetted against a teal and green neon night sky:contentReference[oaicite:4]{index=4}"
+          "src": "img/miaminoir/Miami Vice - No Exit.png",
+          "alt": "Miami Vice - No Exit"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1631379054647-376f289b059f?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Vibrant cityscape at night bathed in blue, pink and purple neon lights:contentReference[oaicite:5]{index=5}"
+          "src": "img/miaminoir/RoboCop - 1987.png",
+          "alt": "RoboCop - 1987"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1716904994199-094ff29d609f?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Grey sports car parked in front of a wall with colorful neon stripes:contentReference[oaicite:6]{index=6}"
+          "src": "img/miaminoir/Scarface - 1983.png",
+          "alt": "Scarface - 1983"
         }
-      ]
+      ],
+      "meta": {
+        "subtitle": "electric / neon / retro-futurism",
+        "palette": [
+          "#00E7F9",
+          "#FF4FA5",
+          "#4F2B7E"
+        ]
+      }
     },
     {
       "name": "Fincher's Sodium Vapor Sickness",
-      "meta": {
-        "subtitle": "sickly yellow‑green / desaturated amber / drained blue",
-        "palette": [
-          "#B5B35D",
-          "#C5A469",
-          "#5E6A74"
-        ]
-      },
       "tiles": [
         {
           "type": "word",
@@ -101,91 +93,251 @@
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1642083493404-98a4a97c20bb?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Street lamp casting a warm yellow glow through tree leaves on a dark night:contentReference[oaicite:7]{index=7}"
+          "src": "img/sodiumvapor/Good Time - 2017 (1).png",
+          "alt": "Good Time - 2017 (1)"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1739730560092-50f197591350?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Foggy highway lined with street lights disappearing into the mist:contentReference[oaicite:8]{index=8}"
+          "src": "img/sodiumvapor/Good Time - 2017.png",
+          "alt": "Good Time - 2017"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1605815745425-47ddb7438bde?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Vintage black typewriter on a dark wooden desk with aged papers"
+          "src": "img/sodiumvapor/Prisoners - 2013.png",
+          "alt": "Prisoners - 2013"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1730822577974-eaabaeb62409?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Dark hallway with a light coming in from the end; minimal corridor with cables on the ceiling:contentReference[oaicite:9]{index=9}"
+          "src": "img/sodiumvapor/Se7en - 1995.png",
+          "alt": "Se7en - 1995"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1597076966189-3d1775dab451?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Grey and black rotary telephone mounted on a white brick wall:contentReference[oaicite:10]{index=10}"
+          "src": "img/sodiumvapor/The Game - 1997.png",
+          "alt": "The Game - 1997"
+        },
+        {
+          "type": "image",
+          "src": "img/sodiumvapor/Zodiac - 2007.png",
+          "alt": "Zodiac - 2007"
+        }
+      ],
+      "meta": {
+        "subtitle": "sickly yellow-green / desaturated amber / drained blue",
+        "palette": [
+          "#B5B35D",
+          "#C5A469",
+          "#5E6A74"
+        ]
+      }
+    },
+    {
+      "name": "Tokyo Cyberpunk",
+      "tiles": [
+        {
+          "type": "word",
+          "text": "neon"
+        },
+        {
+          "type": "word",
+          "text": "rain"
+        },
+        {
+          "type": "word",
+          "text": "future"
+        },
+        {
+          "type": "word",
+          "text": "crowds"
+        },
+        {
+          "type": "word",
+          "text": "wires"
+        },
+        {
+          "type": "image",
+          "src": "img/tokyocyberpunk/Akira - 1988 (1).png",
+          "alt": "Akira - 1988 (1)"
+        },
+        {
+          "type": "image",
+          "src": "img/tokyocyberpunk/Akira - 1988.png",
+          "alt": "Akira - 1988"
+        },
+        {
+          "type": "image",
+          "src": "img/tokyocyberpunk/Ghost in the Shell - 1995 (1).png",
+          "alt": "Ghost in the Shell - 1995 (1)"
+        },
+        {
+          "type": "image",
+          "src": "img/tokyocyberpunk/Ghost in the Shell - 1995 (2).png",
+          "alt": "Ghost in the Shell - 1995 (2)"
+        },
+        {
+          "type": "image",
+          "src": "img/tokyocyberpunk/Ghost in the Shell - 1995.png",
+          "alt": "Ghost in the Shell - 1995"
         }
       ]
     },
     {
-      "name": "Mendl's Pastry Box Pink",
-      "meta": {
-        "subtitle": "cotton candy / regal / analog nostalgia",
-        "palette": [
-          "#F7CDD9",
-          "#7E5F92",
-          "#F6E5D4"
-        ]
-      },
+      "name": "Dogme 95",
       "tiles": [
         {
           "type": "word",
-          "text": "cotton candy",
-          "color": "#F7CDD9"
+          "text": "raw"
         },
         {
           "type": "word",
-          "text": "regal",
-          "color": "#7E5F92"
+          "text": "handheld"
         },
         {
           "type": "word",
-          "text": "cream",
-          "color": "#F6E5D4"
+          "text": "authentic"
         },
         {
           "type": "word",
-          "text": "burgundy",
-          "color": "#5C2A41"
+          "text": "minimal"
         },
         {
           "type": "word",
-          "text": "nostalgia",
-          "color": "#A67D5D"
+          "text": "vow"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1566932520883-c3cef6df83a5?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Pastel macarons, pink/blue"
+          "src": "img/dogme95/HEROTemplate_btw.png",
+          "alt": "HEROTemplate_btw"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1694031764302-c32eedf4216c?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Symmetrical pink building, green roof"
+          "src": "img/dogme95/Melancholia - 2011 (1).png",
+          "alt": "Melancholia - 2011 (1)"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1741555165521-4c9e762fb2e8?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Vintage Kodak camera"
+          "src": "img/dogme95/Melancholia - 2011.png",
+          "alt": "Melancholia - 2011"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1742236467776-8fcdd2e6a381?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Opulent palace interior"
+          "src": "img/dogme95/bjork_1588324525.jpg",
+          "alt": "bjork_1588324525"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1589535189132-7221b70db02a?auto=format&fit=crop&w=1200&q=80",
-          "alt": "Burgundy theater chairs"
+          "src": "img/dogme95/img-42845.jpg.webp",
+          "alt": "img-42845.jpg"
+        },
+        {
+          "type": "image",
+          "src": "img/dogme95/zmxxJVXBv8FF43JFhwBV7UEOd6T0uC_original.jpg",
+          "alt": "zmxxJVXBv8FF43JFhwBV7UEOd6T0uC_original"
+        }
+      ]
+    },
+    {
+      "name": "Giallo",
+      "tiles": [
+        {
+          "type": "word",
+          "text": "knife"
+        },
+        {
+          "type": "word",
+          "text": "mystery"
+        },
+        {
+          "type": "word",
+          "text": "gloves"
+        },
+        {
+          "type": "word",
+          "text": "blood"
+        },
+        {
+          "type": "word",
+          "text": "gaze"
+        },
+        {
+          "type": "image",
+          "src": "img/giallo/Blood and Black Lace - 1964 (1).png",
+          "alt": "Blood and Black Lace - 1964 (1)"
+        },
+        {
+          "type": "image",
+          "src": "img/giallo/Blood and Black Lace - 1964.png",
+          "alt": "Blood and Black Lace - 1964"
+        },
+        {
+          "type": "image",
+          "src": "img/giallo/Deep Red - 1975.png",
+          "alt": "Deep Red - 1975"
+        },
+        {
+          "type": "image",
+          "src": "img/giallo/Suspiria - 1977 (1).png",
+          "alt": "Suspiria - 1977 (1)"
+        },
+        {
+          "type": "image",
+          "src": "img/giallo/Suspiria - 1977 (2).png",
+          "alt": "Suspiria - 1977 (2)"
+        },
+        {
+          "type": "image",
+          "src": "img/giallo/Suspiria - 1977.png",
+          "alt": "Suspiria - 1977"
+        }
+      ]
+    },
+    {
+      "name": "Y2K",
+      "tiles": [
+        {
+          "type": "word",
+          "text": "chrome"
+        },
+        {
+          "type": "word",
+          "text": "bubble"
+        },
+        {
+          "type": "word",
+          "text": "techno"
+        },
+        {
+          "type": "word",
+          "text": "aqua"
+        },
+        {
+          "type": "word",
+          "text": "glitch"
+        },
+        {
+          "type": "image",
+          "src": "img/y2k/Men in Black - 1997.png",
+          "alt": "Men in Black - 1997"
+        },
+        {
+          "type": "image",
+          "src": "img/y2k/Sleepover - 2004.png",
+          "alt": "Sleepover - 2004"
+        },
+        {
+          "type": "image",
+          "src": "img/y2k/Spice Girls - Spice Up Your Life.png",
+          "alt": "Spice Girls - Spice Up Your Life"
+        },
+        {
+          "type": "image",
+          "src": "img/y2k/Teknolust - 2002.png",
+          "alt": "Teknolust - 2002"
+        },
+        {
+          "type": "image",
+          "src": "img/y2k/Zoolander - 2001.png",
+          "alt": "Zoolander - 2001"
         }
       ]
     }
@@ -193,14 +345,6 @@
   "places": [
     {
       "name": "Midnight Laundry",
-      "meta": {
-        "subtitle": "nocturnal / fluorescent / ritual",
-        "palette": [
-          "#0E1E37",
-          "#446688",
-          "#CFE0ED"
-        ]
-      },
       "tiles": [
         {
           "type": "word",
@@ -224,41 +368,46 @@
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1604335398549-1b80aadd00a8?auto=format&fit=crop&w=1200&q=80",
-          "alt": "empty laundromat interior with a long row of front‑loading washing machines under fluorescent lights"
+          "src": "img/midnightlaundry/Acid Arab - Habaytak.png",
+          "alt": "Acid Arab - Habaytak"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1743428471505-8391bc8c088a?auto=format&fit=crop&w=1200&q=80",
-          "alt": "nighttime view through a dark window into a small laundromat with glowing machines"
+          "src": "img/midnightlaundry/Baby Driver - 2017.png",
+          "alt": "Baby Driver - 2017"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1752805869096-9b149e6effa1?auto=format&fit=crop&w=1200&q=80",
-          "alt": "dim laundry room with an open front‑loading washing machine and scattered clothes"
+          "src": "img/midnightlaundry/Everything Everywhere All at Once - 2022.png",
+          "alt": "Everything Everywhere All at Once - 2022"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1675430409777-eaa846201440?auto=format&fit=crop&w=1200&q=80",
-          "alt": "fluorescent‑lit laundromat with shiny dryer doors and rolling carts"
+          "src": "img/midnightlaundry/Fight Club - 1999.png",
+          "alt": "Fight Club - 1999"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1749318475359-800b8318ee7f?auto=format&fit=crop&w=1200&q=80",
-          "alt": "black‑and‑white view of a narrow laundromat with stacked dryers and empty carts"
+          "src": "img/midnightlaundry/REI - Opt Outside.png",
+          "alt": "REI - Opt Outside"
+        },
+        {
+          "type": "image",
+          "src": "img/midnightlaundry/TOKiMONSTA - On Sum (1).png",
+          "alt": "TOKiMONSTA - On Sum (1)"
         }
-      ]
+      ],
+      "meta": {
+        "subtitle": "nocturnal / fluorescent / ritual",
+        "palette": [
+          "#0E1E37",
+          "#446688",
+          "#CFE0ED"
+        ]
+      }
     },
     {
       "name": "After the Party",
-      "meta": {
-        "subtitle": "remnants / dawn / stillness",
-        "palette": [
-          "#F7CAC9",
-          "#FFE1A8",
-          "#CDEDF6"
-        ]
-      },
       "tiles": [
         {
           "type": "word",
@@ -282,41 +431,46 @@
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1559456474-507a0d806eb7?auto=format&fit=crop&w=1200&q=80",
-          "alt": "assorted‑color confetti on floor"
+          "src": "img/aftertheparty/Abba - Happy New Year.png",
+          "alt": "Abba - Happy New Year"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80",
-          "alt": "a person using a vacuum to clean a carpet strewn with confetti"
+          "src": "img/aftertheparty/Mysterious Skin - 2004.png",
+          "alt": "Mysterious Skin - 2004"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1503509563013-22b008324105?auto=format&fit=crop&w=1200&q=80",
-          "alt": "assorted‑color balloons on floor near a closed door"
+          "src": "img/aftertheparty/Red Rocket - 2021.png",
+          "alt": "Red Rocket - 2021"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1659918151453-8cabafe3880e?auto=format&fit=crop&w=1200&q=80",
-          "alt": "empty bottles on a table at sunrise"
+          "src": "img/aftertheparty/Showgirls - 1995.png",
+          "alt": "Showgirls - 1995"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1565986438088-b7d99e8c8184?auto=format&fit=crop&w=1200&q=80",
-          "alt": "rows of empty chairs after a ceremony"
+          "src": "img/aftertheparty/The Big Lebowski - 1998.png",
+          "alt": "The Big Lebowski - 1998"
+        },
+        {
+          "type": "image",
+          "src": "img/aftertheparty/The Substance - 2024.png",
+          "alt": "The Substance - 2024"
         }
-      ]
+      ],
+      "meta": {
+        "subtitle": "remnants / dawn / stillness",
+        "palette": [
+          "#F7CAC9",
+          "#FFE1A8",
+          "#CDEDF6"
+        ]
+      }
     },
     {
       "name": "The Shore",
-      "meta": {
-        "subtitle": "coastal / boundless / serene",
-        "palette": [
-          "#E0E7FF",
-          "#A7D0CB",
-          "#F5D6BA"
-        ]
-      },
       "tiles": [
         {
           "type": "word",
@@ -340,41 +494,46 @@
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1755268359630-bba69be70fe5?auto=format&fit=crop&w=1200&q=80",
-          "alt": "sandy beach with distant people and grassy dunes"
+          "src": "img/beach/A Summer in La Goulette - 1996.png",
+          "alt": "A Summer in La Goulette - 1996"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1755231907705-47c850dc5f22?auto=format&fit=crop&w=1200&q=80",
-          "alt": "calm ocean meeting a sandy beach with distant figures"
+          "src": "img/beach/Beer League - 2006.png",
+          "alt": "Beer League - 2006"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1754778805689-1bd1da87eb96?auto=format&fit=crop&w=1200&q=80",
-          "alt": "rocky coastline with tide pools and waves"
+          "src": "img/beach/New York City Ballet - Year of the Rabbit.png",
+          "alt": "New York City Ballet - Year of the Rabbit"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1734517455753-2bab9eaa9ee6?auto=format&fit=crop&w=1200&q=80",
-          "alt": "driftwood lying on a beach with the ocean beyond"
+          "src": "img/beach/Requiem for a Dream - 2000.png",
+          "alt": "Requiem for a Dream - 2000"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1639825502320-9e59b9748f99?auto=format&fit=crop&w=1200&q=80",
-          "alt": "footprints in the sand near the shoreline"
+          "src": "img/beach/The Craft - 1996.png",
+          "alt": "The Craft - 1996"
+        },
+        {
+          "type": "image",
+          "src": "img/beach/The Limey - 1999.png",
+          "alt": "The Limey - 1999"
         }
-      ]
+      ],
+      "meta": {
+        "subtitle": "coastal / boundless / serene",
+        "palette": [
+          "#E0E7FF",
+          "#A7D0CB",
+          "#F5D6BA"
+        ]
+      }
     },
     {
       "name": "Mirror, Mirror",
-      "meta": {
-        "subtitle": "reflection / transformation / community",
-        "palette": [
-          "#ECD8F0",
-          "#FDF5E6",
-          "#C0BECF"
-        ]
-      },
       "tiles": [
         {
           "type": "word",
@@ -398,28 +557,151 @@
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1706629503720-13cad35ce2e5?auto=format&fit=crop&w=1200&q=80",
-          "alt": "a hair salon with chairs and mirrors"
+          "src": "img/beauty/High Heels - 1991.png",
+          "alt": "High Heels - 1991"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1637777277337-f114350fb088?auto=format&fit=crop&w=1200&q=80",
-          "alt": "a hair salon with chairs and neon signs"
+          "src": "img/beauty/Irma Vep - 1996.png",
+          "alt": "Irma Vep - 1996"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1675034742143-151fc66c9d0b?auto=format&fit=crop&w=1200&q=80",
-          "alt": "a woman getting her hair styled in a mirror"
+          "src": "img/beauty/Rendez Vou - Rendez Vou.png",
+          "alt": "Rendez Vou - Rendez Vou"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1639574658063-859c220019e6?auto=format&fit=crop&w=1200&q=80",
-          "alt": "a close up of a hair dryer on a table"
+          "src": "img/beauty/Tie Me Up! Tie Me Down! - 1989.png",
+          "alt": "Tie Me Up! Tie Me Down! - 1989"
         },
         {
           "type": "image",
-          "src": "https://images.unsplash.com/photo-1587477444258-096b2d514c12?auto=format&fit=crop&w=1200&q=80",
-          "alt": "brown hair comb on a white wooden table"
+          "src": "img/beauty/Under the Skin - 2013.png",
+          "alt": "Under the Skin - 2013"
+        }
+      ],
+      "meta": {
+        "subtitle": "reflection / transformation / community",
+        "palette": [
+          "#ECD8F0",
+          "#FDF5E6",
+          "#C0BECF"
+        ]
+      }
+    },
+    {
+      "name": "The Great Outdoors",
+      "tiles": [
+        {
+          "type": "word",
+          "text": "trail"
+        },
+        {
+          "type": "word",
+          "text": "campfire"
+        },
+        {
+          "type": "word",
+          "text": "summit"
+        },
+        {
+          "type": "word",
+          "text": "wilderness"
+        },
+        {
+          "type": "word",
+          "text": "fresh"
+        },
+        {
+          "type": "image",
+          "src": "img/greatoutdoors/Angels Hard as They Come - 1971.png",
+          "alt": "Angels Hard as They Come - 1971"
+        },
+        {
+          "type": "image",
+          "src": "img/greatoutdoors/Decision to Leave - 2022.png",
+          "alt": "Decision to Leave - 2022"
+        },
+        {
+          "type": "image",
+          "src": "img/greatoutdoors/My Own Private Idaho - 1991.png",
+          "alt": "My Own Private Idaho - 1991"
+        },
+        {
+          "type": "image",
+          "src": "img/greatoutdoors/The Highway Family - 2022.png",
+          "alt": "The Highway Family - 2022"
+        },
+        {
+          "type": "image",
+          "src": "img/greatoutdoors/The Little Prince - 1974.png",
+          "alt": "The Little Prince - 1974"
+        },
+        {
+          "type": "image",
+          "src": "img/greatoutdoors/View from a Blue Moon - 2015.png",
+          "alt": "View from a Blue Moon - 2015"
+        },
+        {
+          "type": "image",
+          "src": "img/greatoutdoors/Wild - 2014.png",
+          "alt": "Wild - 2014"
+        }
+      ]
+    },
+    {
+      "name": "Mallrats",
+      "tiles": [
+        {
+          "type": "word",
+          "text": "retail"
+        },
+        {
+          "type": "word",
+          "text": "escalators"
+        },
+        {
+          "type": "word",
+          "text": "food court"
+        },
+        {
+          "type": "word",
+          "text": "arcade"
+        },
+        {
+          "type": "word",
+          "text": "security"
+        },
+        {
+          "type": "image",
+          "src": "img/mallrats/Cha Cha Real Smooth - 2022.png",
+          "alt": "Cha Cha Real Smooth - 2022"
+        },
+        {
+          "type": "image",
+          "src": "img/mallrats/Dawn of the Dead - 1978.png",
+          "alt": "Dawn of the Dead - 1978"
+        },
+        {
+          "type": "image",
+          "src": "img/mallrats/Eighth Grade - 2018.png",
+          "alt": "Eighth Grade - 2018"
+        },
+        {
+          "type": "image",
+          "src": "img/mallrats/Jackie Brown - 1997.png",
+          "alt": "Jackie Brown - 1997"
+        },
+        {
+          "type": "image",
+          "src": "img/mallrats/Sun and Concrete - 2023.png",
+          "alt": "Sun and Concrete - 2023"
+        },
+        {
+          "type": "image",
+          "src": "img/mallrats/Wonder Woman 1984 - 2020.png",
+          "alt": "Wonder Woman 1984 - 2020"
         }
       ]
     }
