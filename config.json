@@ -1,7 +1,7 @@
 {
   "aesthetics": [
     {
-      "name": "Miami Vice Neon Noir",
+      "name": "Neon Noir",
       "tiles": [
         {
           "type": "word",
@@ -31,7 +31,7 @@
         {
           "type": "image",
           "src": "img/miaminoir/Home Alone 2_ Lost in New York - 1992.png",
-          "alt": "Home Alone 2_ Lost in New York - 1992"
+          "alt": "Home Alone 2: Lost in New York - 1992"
         },
         {
           "type": "image",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "name": "Fincher's Sodium Vapor Sickness",
+      "name": "Sodium Vapor",
       "tiles": [
         {
           "type": "word",
@@ -94,7 +94,7 @@
         {
           "type": "image",
           "src": "img/sodiumvapor/Good Time - 2017 (1).png",
-          "alt": "Good Time - 2017 (1)"
+          "alt": "Good Time - 2017"
         },
         {
           "type": "image",
@@ -157,7 +157,7 @@
         {
           "type": "image",
           "src": "img/tokyocyberpunk/Akira - 1988 (1).png",
-          "alt": "Akira - 1988 (1)"
+          "alt": "Akira - 1988"
         },
         {
           "type": "image",
@@ -167,12 +167,12 @@
         {
           "type": "image",
           "src": "img/tokyocyberpunk/Ghost in the Shell - 1995 (1).png",
-          "alt": "Ghost in the Shell - 1995 (1)"
+          "alt": "Ghost in the Shell - 1995"
         },
         {
           "type": "image",
           "src": "img/tokyocyberpunk/Ghost in the Shell - 1995 (2).png",
-          "alt": "Ghost in the Shell - 1995 (2)"
+          "alt": "Ghost in the Shell - 1995"
         },
         {
           "type": "image",
@@ -207,32 +207,32 @@
         {
           "type": "image",
           "src": "img/dogme95/HEROTemplate_btw.png",
-          "alt": "HEROTemplate_btw"
+          "alt": "Breaking the Waves - 1996"
         },
         {
           "type": "image",
-          "src": "img/dogme95/Melancholia - 2011 (1).png",
-          "alt": "Melancholia - 2011 (1)"
+          "src": "img/dogme95/Julien Donkey Boy - 1999.png",
+          "alt": "Julien Donkey Boy - 1999"
         },
         {
           "type": "image",
-          "src": "img/dogme95/Melancholia - 2011.png",
-          "alt": "Melancholia - 2011"
+          "src": "img/dogme95/The Idiots - 1998.jpg",
+          "alt": "The Idiots - 1998"
         },
         {
           "type": "image",
           "src": "img/dogme95/bjork_1588324525.jpg",
-          "alt": "bjork_1588324525"
+          "alt": "Dancer in the Dark - 2000"
         },
         {
           "type": "image",
           "src": "img/dogme95/img-42845.jpg.webp",
-          "alt": "img-42845.jpg"
+          "alt": "Dancer in the Dark - 2000"
         },
         {
           "type": "image",
           "src": "img/dogme95/zmxxJVXBv8FF43JFhwBV7UEOd6T0uC_original.jpg",
-          "alt": "zmxxJVXBv8FF43JFhwBV7UEOd6T0uC_original"
+          "alt": "The Celebration - 1998"
         }
       ]
     },
@@ -262,7 +262,7 @@
         {
           "type": "image",
           "src": "img/giallo/Blood and Black Lace - 1964 (1).png",
-          "alt": "Blood and Black Lace - 1964 (1)"
+          "alt": "Blood and Black Lace - 1964"
         },
         {
           "type": "image",
@@ -277,12 +277,12 @@
         {
           "type": "image",
           "src": "img/giallo/Suspiria - 1977 (1).png",
-          "alt": "Suspiria - 1977 (1)"
+          "alt": "Suspiria - 1977"
         },
         {
           "type": "image",
           "src": "img/giallo/Suspiria - 1977 (2).png",
-          "alt": "Suspiria - 1977 (2)"
+          "alt": "Suspiria - 1977"
         },
         {
           "type": "image",
@@ -394,7 +394,7 @@
         {
           "type": "image",
           "src": "img/midnightlaundry/TOKiMONSTA - On Sum (1).png",
-          "alt": "TOKiMONSTA - On Sum (1)"
+          "alt": "TOKiMONSTA - On Sum"
         }
       ],
       "meta": {
@@ -553,7 +553,7 @@
         },
         {
           "type": "word",
-          "text": "community"
+          "text": "sculpt"
         },
         {
           "type": "image",
@@ -582,7 +582,7 @@
         }
       ],
       "meta": {
-        "subtitle": "reflection / transformation / community",
+        "subtitle": "reflection / transformation / beauty",
         "palette": [
           "#ECD8F0",
           "#FDF5E6",
