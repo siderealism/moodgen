@@ -7,6 +7,7 @@ A single-page React app that deals a random vibe from the curated image collecti
 The app fetches local files, so the browser must load it over HTTP.
 Opening `index.html` directly from the filesystem triggers CORS errors.
 Scripts are authored in JSX and modern JavaScript; `index.html` loads Babel with the `env` and `react` presets so they compile in the browser.
+Tailwind CSS is pulled from its CDN to style the page without a build step.
 Start the included static server:
 
 ```bash
