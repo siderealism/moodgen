@@ -3,7 +3,7 @@ const { useEffect, useMemo, useState } = React;
 /**
  * Responsive Moodboard Tileboard
  * - Full-bleed grid, square-ish tiles (fills entire viewport)
- * - Toggle between small 5×3 and large 4×2 layouts via floating action button
+ * - Toggle between small 3×4 and large 2×3 layouts via floating action button
  * - Image tiles span two columns while word tiles span one; header tile is 1×1
  * - Remaining tiles are shuffled from the two selected categories
  * - Images fade in on load; subtle pop-in animation on refresh
@@ -12,8 +12,8 @@ const { useEffect, useMemo, useState } = React;
 
 // -------------------- Utilities --------------------
 function useGrid(isLarge) {
-  const cols = isLarge ? 4 : 5;
-  const rows = isLarge ? 2 : 3;
+  const cols = isLarge ? 2 : 3;
+  const rows = isLarge ? 3 : 4;
   return { cols, rows };
 }
 
@@ -51,26 +51,33 @@ function ImageTile({ src, alt }) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
   return (
-    <div className="relative w-full h-full overflow-hidden bg-zinc-100">
+    <div className="relative w-full h-full overflow-hidden bg-zinc-100 group">
       {!errored ? (
-        <img
-          src={src}
-          alt={alt || "tile"}
-          className="absolute inset-0 w-full h-full object-cover"
-          draggable={false}
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
-          onLoad={() => setLoaded(true)}
-          onError={() => { setLoaded(true); setErrored(true); }}
-          style={{
-            opacity: loaded ? 1 : 0,
-            filter: loaded ? "none" : "blur(6px)",
-            transform: loaded ? "scale(1)" : "scale(1.02)",
-            transition: "opacity 400ms ease-out, filter 600ms ease-out, transform 500ms ease-out",
-            willChange: "opacity, transform, filter",
-          }}
-        />
+        <>
+          <img
+            src={src}
+            alt={alt || "tile"}
+            className="absolute inset-0 w-full h-full object-cover"
+            draggable={false}
+            loading="lazy"
+            decoding="async"
+            referrerPolicy="no-referrer"
+            onLoad={() => setLoaded(true)}
+            onError={() => { setLoaded(true); setErrored(true); }}
+            style={{
+              opacity: loaded ? 1 : 0,
+              filter: loaded ? "none" : "blur(6px)",
+              transform: loaded ? "scale(1)" : "scale(1.02)",
+              transition: "opacity 400ms ease-out, filter 600ms ease-out, transform 500ms ease-out",
+              willChange: "opacity, transform, filter",
+            }}
+          />
+          <div
+            className="absolute inset-0 flex items-center justify-center bg-black/60 text-white text-center px-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          >
+            <span className="text-sm leading-snug">{alt}</span>
+          </div>
+        </>
       ) : (
         <div className="absolute inset-0 flex items-center justify-center bg-zinc-200">
           <span className="text-xs text-zinc-500">image unavailable</span>
