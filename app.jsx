@@ -155,7 +155,6 @@ function HeaderTile({ a, p, onRefresh }) {
       style={{ gridColumn: "span 1", animation: "tile-pop 420ms cubic-bezier(0.22, 1, 0.36, 1) both" }}
     >
       <div className="text-center">
-        <div className="text-xs uppercase tracking-widest text-zinc-500">Moodboard</div>
         <div className="text-lg font-semibold text-zinc-900 mt-1">
           {a?.name} {'×'} {p?.name}
         </div>
