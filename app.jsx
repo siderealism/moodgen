@@ -183,37 +183,68 @@ function App() {
   // Build the mixed tile list for visible grid (minus header)
   const data = useMemo(() => {
     if (!selection.aesthetic || !selection.place) return [];
-    const a = (selection.aesthetic.tiles || []).map(t => ({ ...t, _cat: selection.aesthetic.name }));
-    const p = (selection.place.tiles || []).map(t => ({ ...t, _cat: selection.place.name }));
-    const mixed = shuffle([...a, ...p]);
-    const palette = mixed
+
+    const aTiles = (selection.aesthetic.tiles || []).map(t => ({ ...t, _cat: selection.aesthetic.name }));
+    const pTiles = (selection.place.tiles || []).map(t => ({ ...t, _cat: selection.place.name }));
+
+    const palette = [...aTiles, ...pTiles]
       .filter(t => t.type === "word" && t.color)
       .map(t => t.color);
 
+    const aWords = aTiles.filter(t => t.type === "word");
+    const aImages = aTiles.filter(t => t.type === "image");
+    const pWords = pTiles.filter(t => t.type === "word");
+    const pImages = pTiles.filter(t => t.type === "image");
+
+    const randPop = arr => {
+      if (!arr.length) return null;
+      const idx = Math.floor(Math.random() * arr.length);
+      return arr.splice(idx, 1)[0];
+    };
+
     const needCells = Math.max(0, totalCells - headerSpan); // account for header span
-    const chosen = [];
+    const mandatory = [];
     let used = 0;
+
+    const takeMandatory = (arr, span) => {
+      const t = randPop(arr);
+      if (t && used + span <= needCells) {
+        const color = t.type === "word" ? t.color || sample(palette) || randomColor() : undefined;
+        mandatory.push({ ...t, span, color });
+        used += span;
+      }
+    };
+
+    // Ensure at least one word and one image from each category
+    takeMandatory(aWords, 1);
+    takeMandatory(aImages, 2);
+    takeMandatory(pWords, 1);
+    takeMandatory(pImages, 2);
+
+    const pool = shuffle([...aWords, ...aImages, ...pWords, ...pImages]);
+    const chosen = [];
     let i = 0;
-    while (used < needCells && mixed.length > 0) {
-      const t = mixed[i % mixed.length];
+    while (used < needCells && pool.length > 0) {
+      const t = pool[i % pool.length];
       const span = t.type === "image" ? 2 : 1;
       if (used + span <= needCells) {
-        const color =
-          t.type === "word" ? t.color || sample(palette) || randomColor() : undefined;
+        const color = t.type === "word" ? t.color || sample(palette) || randomColor() : undefined;
         chosen.push({ ...t, span, color });
         used += span;
       }
       i++;
     }
+
     if (used < needCells) {
-      const filler = mixed.find(t => t.type === "word");
+      const filler = pool.find(t => t.type === "word") || mandatory.find(t => t.type === "word");
       while (used < needCells && filler) {
         const color = filler.color || sample(palette) || randomColor();
         chosen.push({ ...filler, span: 1, color });
         used += 1;
       }
     }
-    return chosen;
+
+    return shuffle([...mandatory, ...chosen]);
   }, [totalCells, selection]);
 
   // Randomized stagger delays for a subtle cascade
