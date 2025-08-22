@@ -3,7 +3,8 @@ const { useEffect, useMemo, useState } = React;
 /**
  * Responsive Moodboard Tileboard
  * - Full-bleed grid, square-ish tiles (fills entire viewport)
- * - Desktop: 3×4 (rows × cols), Mobile (<640px): 4×2
+ * - Toggle between small (3 cols × 5 rows) and large (4 cols × 2 rows) layouts via floating action button
+ * - On mobile screens these rotate to small (3 cols × 6 rows) and large (2 cols × 4 rows)
  * - Image tiles span two columns while word tiles span one; header tile is 1×1
  * - Remaining tiles are shuffled from the two selected categories
  * - Images fade in on load; subtle pop-in animation on refresh
@@ -11,32 +12,38 @@ const { useEffect, useMemo, useState } = React;
  */
 
 // -------------------- Utilities --------------------
-function isClient() {
-  return typeof window !== "undefined" && typeof document !== "undefined";
-}
-
-function useWindowSize() {
-  const [size, setSize] = useState({
-    w: isClient() ? window.innerWidth : 1024,
-    h: isClient() ? window.innerHeight : 768,
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(max-width: 640px)").matches;
   });
 
   useEffect(() => {
-    if (!isClient()) return;
-    const onResize = () => setSize({ w: window.innerWidth, h: window.innerHeight });
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 640px)");
+    const handler = (e) => setIsMobile(e.matches);
+    if (mq.addEventListener) {
+      mq.addEventListener("change", handler);
+    } else {
+      mq.addListener(handler);
+    }
+    return () => {
+      if (mq.removeEventListener) {
+        mq.removeEventListener("change", handler);
+      } else {
+        mq.removeListener(handler);
+      }
+    };
   }, []);
 
-  return size;
+  return isMobile;
 }
 
-function useGrid() {
-  const { w } = useWindowSize();
-  const isMobile = w < 640;
-  const cols = isMobile ? 2 : 4;
-  const rows = isMobile ? 4 : 3;
-  return { isMobile, cols, rows };
+function useGrid(isLarge) {
+  const isMobile = useIsMobile();
+  const cols = isMobile ? (isLarge ? 2 : 3) : (isLarge ? 4 : 3);
+  const rows = isMobile ? (isLarge ? 4 : 6) : (isLarge ? 2 : 5);
+  return { cols, rows };
 }
 
 function useConfig() {
@@ -73,26 +80,33 @@ function ImageTile({ src, alt }) {
   const [loaded, setLoaded] = useState(false);
   const [errored, setErrored] = useState(false);
   return (
-    <div className="relative w-full h-full overflow-hidden bg-zinc-100">
+    <div className="relative w-full h-full overflow-hidden bg-zinc-100 group">
       {!errored ? (
-        <img
-          src={src}
-          alt={alt || "tile"}
-          className="absolute inset-0 w-full h-full object-cover"
-          draggable={false}
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
-          onLoad={() => setLoaded(true)}
-          onError={() => { setLoaded(true); setErrored(true); }}
-          style={{
-            opacity: loaded ? 1 : 0,
-            filter: loaded ? "none" : "blur(6px)",
-            transform: loaded ? "scale(1)" : "scale(1.02)",
-            transition: "opacity 400ms ease-out, filter 600ms ease-out, transform 500ms ease-out",
-            willChange: "opacity, transform, filter",
-          }}
-        />
+        <>
+          <img
+            src={src}
+            alt={alt || "tile"}
+            className="absolute inset-0 w-full h-full object-cover"
+            draggable={false}
+            loading="lazy"
+            decoding="async"
+            referrerPolicy="no-referrer"
+            onLoad={() => setLoaded(true)}
+            onError={() => { setLoaded(true); setErrored(true); }}
+            style={{
+              opacity: loaded ? 1 : 0,
+              filter: loaded ? "none" : "blur(6px)",
+              transform: loaded ? "scale(1)" : "scale(1.02)",
+              transition: "opacity 400ms ease-out, filter 600ms ease-out, transform 500ms ease-out",
+              willChange: "opacity, transform, filter",
+            }}
+          />
+          <div
+            className="absolute inset-0 flex items-center justify-center bg-black/60 text-white text-center px-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          >
+            <span className="text-sm leading-snug">{alt}</span>
+          </div>
+        </>
       ) : (
         <div className="absolute inset-0 flex items-center justify-center bg-zinc-200">
           <span className="text-xs text-zinc-500">image unavailable</span>
@@ -162,9 +176,46 @@ function HeaderTile({ a, p, onRefresh }) {
   );
 }
 
+function ZoomInIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 21L15.8033 15.8033M15.8033 15.8033C17.1605 14.4461 18 12.5711 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C12.5711 18 14.4461 17.1605 15.8033 15.8033ZM10.5 7.5V13.5M13.5 10.5H7.5"
+      />
+    </svg>
+  );
+}
+
+function ZoomOutIcon({ className = "w-5 h-5" }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 21L15.8033 15.8033M15.8033 15.8033C17.1605 14.4461 18 12.5711 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C12.5711 18 14.4461 17.1605 15.8033 15.8033ZM13.5 10.5H7.5"
+      />
+    </svg>
+  );
+}
+
 // -------------------- App --------------------
 function App() {
-  const { cols, rows } = useGrid();
+  const [isLarge, setIsLarge] = useState(true);
+  const { cols, rows } = useGrid(isLarge);
   const CONFIG = useConfig();
   const totalCells = cols * rows;
   const headerSpan = 1;
@@ -215,11 +266,25 @@ function App() {
       }
     };
 
-    // Ensure at least one word and one image from each category
-    takeMandatory(aWords, 1);
-    takeMandatory(aImages, 2);
-    takeMandatory(pWords, 1);
-    takeMandatory(pImages, 2);
+    if (needCells < 6) {
+      // Prefer two images and one word when space is extremely tight
+      const takeImage = arr => takeMandatory(arr, 2);
+      // Grab images first to guarantee two
+      takeImage(aImages);
+      takeImage(pImages);
+      if (mandatory.filter(t => t.type === "image").length < 2) takeImage(aImages);
+      if (mandatory.filter(t => t.type === "image").length < 2) takeImage(pImages);
+
+      // Then take a single word from either category
+      const [w1, w2] = shuffle([aWords, pWords]);
+      if (!takeMandatory(w1, 1)) takeMandatory(w2, 1);
+    } else {
+      // Ensure at least one word and one image from each category
+      takeMandatory(aWords, 1);
+      takeMandatory(aImages, 2);
+      takeMandatory(pWords, 1);
+      takeMandatory(pImages, 2);
+    }
 
     const pool = shuffle([...aWords, ...aImages, ...pWords, ...pImages]);
     const chosen = [];
@@ -308,6 +373,13 @@ function App() {
           <Tile key={`${nonce}-${i}-${t._cat}-${t.text || t.src}`} data={t} mountDelay={delays[i] || 0} />
         ))}
       </div>
+      <button
+        onClick={() => setIsLarge(l => !l)}
+        className="fixed bottom-4 right-4 w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm shadow-md border border-zinc-300 flex items-center justify-center text-zinc-700 hover:bg-white/80 transition"
+        aria-label="Toggle grid layout"
+      >
+        {isLarge ? <ZoomOutIcon /> : <ZoomInIcon />}
+      </button>
     </div>
   );
 }
