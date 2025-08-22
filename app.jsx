@@ -3,7 +3,8 @@ const { useEffect, useMemo, useState } = React;
 /**
  * Responsive Moodboard Tileboard
  * - Full-bleed grid, square-ish tiles (fills entire viewport)
- * - Desktop: 5×3, Mobile (<640px): 2×4
+ * - Desktop: 4×3, Mobile (<640px): 2×4
+ * - Image tiles span two columns while word tiles span one, packed with dense auto-flow
  * - First tile is a header showing selected Aesthetic × Place and a Refresh button
  * - Remaining tiles are shuffled from the two selected categories
  * - Images fade in on load; subtle pop-in animation on refresh
@@ -34,7 +35,7 @@ function useWindowSize() {
 function useGrid() {
   const { w } = useWindowSize();
   const isMobile = w < 640;
-  const cols = isMobile ? 2 : 5;
+  const cols = isMobile ? 2 : 4;
   const rows = isMobile ? 4 : 3;
   return { isMobile, cols, rows };
 }
@@ -110,6 +111,7 @@ function Tile({ data, mountDelay = 0 }) {
   const style = {
     animation: `tile-pop 420ms cubic-bezier(0.22, 1, 0.36, 1) ${mountDelay}ms both`,
     willChange: "opacity, transform",
+    gridColumn: `span ${data.span || 1}`,
   };
 
   if (data.type === "word") {
@@ -131,7 +133,10 @@ function Tile({ data, mountDelay = 0 }) {
 
 function HeaderTile({ a, p, onRefresh }) {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-white tile-wrap" style={{ animation: "tile-pop 420ms cubic-bezier(0.22, 1, 0.36, 1) both" }}>
+    <div
+      className="w-full h-full flex flex-col items-center justify-center gap-3 bg-white tile-wrap"
+      style={{ gridColumn: "span 2", animation: "tile-pop 420ms cubic-bezier(0.22, 1, 0.36, 1) both" }}
+    >
       <div className="text-center">
         <div className="text-xs uppercase tracking-widest text-zinc-500">Moodboard</div>
         <div className="text-lg font-semibold text-zinc-900 mt-1">
@@ -158,7 +163,8 @@ function HeaderTile({ a, p, onRefresh }) {
 function App() {
   const { cols, rows } = useGrid();
   const CONFIG = useConfig();
-  const visibleCount = cols * rows; // includes header tile at index 0
+  const totalCells = cols * rows;
+  const headerSpan = 2;
 
   // Shuffle nonce triggers reselection & re-render animations
   const [nonce, setNonce] = useState(0);
@@ -178,24 +184,35 @@ function App() {
     const p = (selection.place.tiles || []).map(t => ({ ...t, _cat: selection.place.name }));
     const mixed = shuffle([...a, ...p]);
 
-    const need = Math.max(0, visibleCount - 1);
-    const chosen = mixed.slice(0, need);
-
-    // Cycle if not enough tiles
+    const needCells = Math.max(0, totalCells - headerSpan); // account for header span
+    const chosen = [];
+    let used = 0;
     let i = 0;
-    while (chosen.length < need && mixed.length > 0) {
-      chosen.push(mixed[i % mixed.length]);
+    while (used < needCells && mixed.length > 0) {
+      const t = mixed[i % mixed.length];
+      const span = t.type === "image" ? 2 : 1;
+      if (used + span <= needCells) {
+        chosen.push({ ...t, span });
+        used += span;
+      }
       i++;
     }
+    if (used < needCells) {
+      const filler = mixed.find(t => t.type === "word");
+      while (used < needCells && filler) {
+        chosen.push({ ...filler, span: 1 });
+        used += 1;
+      }
+    }
     return chosen;
-  }, [visibleCount, selection]);
+  }, [totalCells, selection]);
 
   // Randomized stagger delays for a subtle cascade
   const delays = useMemo(() => {
-    const n = Math.max(0, visibleCount - 1);
+    const n = data.length;
     const arr = Array.from({ length: n }, (_, i) => 25 * i);
     return shuffle(arr);
-  }, [visibleCount, nonce]);
+  }, [data.length, nonce]);
 
   const handleRefresh = () => setNonce(n => n + 1);
 
@@ -205,7 +222,7 @@ function App() {
     try {
       console.assert(Array.isArray(CONFIG.aesthetics) && CONFIG.aesthetics.length >= 1, "CONFIG.aesthetics should be a non-empty array");
       console.assert(Array.isArray(CONFIG.places) && CONFIG.places.length >= 1, "CONFIG.places should be a non-empty array");
-      console.assert(Number.isInteger(visibleCount) && visibleCount > 0, "visibleCount should be a positive integer");
+        console.assert(Number.isInteger(totalCells) && totalCells > 0, "totalCells should be a positive integer");
 
       // Test helpers
       const arr = [1, 2, 3, 4, 5];
@@ -216,7 +233,7 @@ function App() {
     } catch (e) {
       console.warn("Sanity checks failed:", e);
     }
-  }, [visibleCount, CONFIG]);
+    }, [totalCells, CONFIG]);
 
   if (!CONFIG) return <div className="min-h-screen w-full" />;
 
@@ -234,14 +251,15 @@ function App() {
         .tile-wrap { position: relative; overflow: hidden; backface-visibility: hidden; transform: translateZ(0); outline: 1px solid transparent; }
       `}</style>
 
-      <div
-        className="grid h-[100dvh] w-[100dvw]"
-        style={{
-          gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-          gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
-          gap: 0,
-        }}
-      >
+        <div
+          className="grid h-[100dvh] w-[100dvw]"
+          style={{
+            gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+            gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
+            gridAutoFlow: "dense",
+            gap: 0,
+          }}
+        >
         {/* Header tile in first cell */}
         <HeaderTile a={selection.aesthetic} p={selection.place} onRefresh={handleRefresh} />
 

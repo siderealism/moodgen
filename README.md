@@ -8,6 +8,7 @@ The app fetches local files, so the browser must load it over HTTP.
 Opening `index.html` directly from the filesystem triggers CORS errors.
 Scripts are authored in JSX and modern JavaScript; `index.html` loads Babel with the `env` and `react` presets so they compile in the browser.
 Tailwind CSS is pulled from its CDN to style the page without a build step.
+Image tiles span two columns while word tiles take one, producing a tightly packed grid.
 Start the included static server:
 
 ```bash
