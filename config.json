@@ -1,0 +1,427 @@
+{
+  "aesthetics": [
+    {
+      "name": "Miami Vice Neon Noir",
+      "meta": {
+        "subtitle": "electric / neon / retro‑futurism",
+        "palette": [
+          "#00E7F9",
+          "#FF4FA5",
+          "#4F2B7E"
+        ]
+      },
+      "tiles": [
+        {
+          "type": "word",
+          "text": "electric",
+          "color": "#00E7F9"
+        },
+        {
+          "type": "word",
+          "text": "neon",
+          "color": "#FF4FA5"
+        },
+        {
+          "type": "word",
+          "text": "chrome",
+          "color": "#EDEDED"
+        },
+        {
+          "type": "word",
+          "text": "synthwave",
+          "color": "#4F2B7E"
+        },
+        {
+          "type": "word",
+          "text": "palms",
+          "color": "#00A6E0"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1630354225636-9846415c1d21?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Neon ‘Starlite’ sign glowing pink against a palm tree, Miami Beach:contentReference[oaicite:2]{index=2}"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1578742903196-42ce22984ec9?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Classic yellow and white car parked by the Avalon hotel under green neon lights:contentReference[oaicite:3]{index=3}"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1562147624-cc4020943c73?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Palm tree silhouetted against a teal and green neon night sky:contentReference[oaicite:4]{index=4}"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1631379054647-376f289b059f?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Vibrant cityscape at night bathed in blue, pink and purple neon lights:contentReference[oaicite:5]{index=5}"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1716904994199-094ff29d609f?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Grey sports car parked in front of a wall with colorful neon stripes:contentReference[oaicite:6]{index=6}"
+        }
+      ]
+    },
+    {
+      "name": "Fincher's Sodium Vapor Sickness",
+      "meta": {
+        "subtitle": "sickly yellow‑green / desaturated amber / drained blue",
+        "palette": [
+          "#B5B35D",
+          "#C5A469",
+          "#5E6A74"
+        ]
+      },
+      "tiles": [
+        {
+          "type": "word",
+          "text": "sodium",
+          "color": "#B5B35D"
+        },
+        {
+          "type": "word",
+          "text": "paranoia",
+          "color": "#5E6A74"
+        },
+        {
+          "type": "word",
+          "text": "industrial",
+          "color": "#5C5C5C"
+        },
+        {
+          "type": "word",
+          "text": "obsession",
+          "color": "#C5A469"
+        },
+        {
+          "type": "word",
+          "text": "decay",
+          "color": "#444444"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1642083493404-98a4a97c20bb?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Street lamp casting a warm yellow glow through tree leaves on a dark night:contentReference[oaicite:7]{index=7}"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1739730560092-50f197591350?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Foggy highway lined with street lights disappearing into the mist:contentReference[oaicite:8]{index=8}"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1605815745425-47ddb7438bde?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Vintage black typewriter on a dark wooden desk with aged papers"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1730822577974-eaabaeb62409?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Dark hallway with a light coming in from the end; minimal corridor with cables on the ceiling:contentReference[oaicite:9]{index=9}"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1597076966189-3d1775dab451?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Grey and black rotary telephone mounted on a white brick wall:contentReference[oaicite:10]{index=10}"
+        }
+      ]
+    },
+    {
+      "name": "Mendl's Pastry Box Pink",
+      "meta": {
+        "subtitle": "cotton candy / regal / analog nostalgia",
+        "palette": [
+          "#F7CDD9",
+          "#7E5F92",
+          "#F6E5D4"
+        ]
+      },
+      "tiles": [
+        {
+          "type": "word",
+          "text": "cotton candy",
+          "color": "#F7CDD9"
+        },
+        {
+          "type": "word",
+          "text": "regal",
+          "color": "#7E5F92"
+        },
+        {
+          "type": "word",
+          "text": "cream",
+          "color": "#F6E5D4"
+        },
+        {
+          "type": "word",
+          "text": "burgundy",
+          "color": "#5C2A41"
+        },
+        {
+          "type": "word",
+          "text": "nostalgia",
+          "color": "#A67D5D"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1566932520883-c3cef6df83a5?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Pastel macarons, pink/blue"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1694031764302-c32eedf4216c?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Symmetrical pink building, green roof"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1741555165521-4c9e762fb2e8?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Vintage Kodak camera"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1742236467776-8fcdd2e6a381?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Opulent palace interior"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1589535189132-7221b70db02a?auto=format&fit=crop&w=1200&q=80",
+          "alt": "Burgundy theater chairs"
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "name": "Midnight Laundry",
+      "meta": {
+        "subtitle": "nocturnal / fluorescent / ritual",
+        "palette": [
+          "#0E1E37",
+          "#446688",
+          "#CFE0ED"
+        ]
+      },
+      "tiles": [
+        {
+          "type": "word",
+          "text": "insomnia"
+        },
+        {
+          "type": "word",
+          "text": "fluorescent"
+        },
+        {
+          "type": "word",
+          "text": "ritual"
+        },
+        {
+          "type": "word",
+          "text": "solitude"
+        },
+        {
+          "type": "word",
+          "text": "repetition"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1604335398549-1b80aadd00a8?auto=format&fit=crop&w=1200&q=80",
+          "alt": "empty laundromat interior with a long row of front‑loading washing machines under fluorescent lights"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1743428471505-8391bc8c088a?auto=format&fit=crop&w=1200&q=80",
+          "alt": "nighttime view through a dark window into a small laundromat with glowing machines"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1752805869096-9b149e6effa1?auto=format&fit=crop&w=1200&q=80",
+          "alt": "dim laundry room with an open front‑loading washing machine and scattered clothes"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1675430409777-eaa846201440?auto=format&fit=crop&w=1200&q=80",
+          "alt": "fluorescent‑lit laundromat with shiny dryer doors and rolling carts"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1749318475359-800b8318ee7f?auto=format&fit=crop&w=1200&q=80",
+          "alt": "black‑and‑white view of a narrow laundromat with stacked dryers and empty carts"
+        }
+      ]
+    },
+    {
+      "name": "After the Party",
+      "meta": {
+        "subtitle": "remnants / dawn / stillness",
+        "palette": [
+          "#F7CAC9",
+          "#FFE1A8",
+          "#CDEDF6"
+        ]
+      },
+      "tiles": [
+        {
+          "type": "word",
+          "text": "scattered"
+        },
+        {
+          "type": "word",
+          "text": "aftermath"
+        },
+        {
+          "type": "word",
+          "text": "dawn"
+        },
+        {
+          "type": "word",
+          "text": "remnants"
+        },
+        {
+          "type": "word",
+          "text": "quiet"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1559456474-507a0d806eb7?auto=format&fit=crop&w=1200&q=80",
+          "alt": "assorted‑color confetti on floor"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80",
+          "alt": "a person using a vacuum to clean a carpet strewn with confetti"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1503509563013-22b008324105?auto=format&fit=crop&w=1200&q=80",
+          "alt": "assorted‑color balloons on floor near a closed door"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1659918151453-8cabafe3880e?auto=format&fit=crop&w=1200&q=80",
+          "alt": "empty bottles on a table at sunrise"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1565986438088-b7d99e8c8184?auto=format&fit=crop&w=1200&q=80",
+          "alt": "rows of empty chairs after a ceremony"
+        }
+      ]
+    },
+    {
+      "name": "The Shore",
+      "meta": {
+        "subtitle": "coastal / boundless / serene",
+        "palette": [
+          "#E0E7FF",
+          "#A7D0CB",
+          "#F5D6BA"
+        ]
+      },
+      "tiles": [
+        {
+          "type": "word",
+          "text": "horizon"
+        },
+        {
+          "type": "word",
+          "text": "tidal"
+        },
+        {
+          "type": "word",
+          "text": "driftwood"
+        },
+        {
+          "type": "word",
+          "text": "vast"
+        },
+        {
+          "type": "word",
+          "text": "footprints"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1755268359630-bba69be70fe5?auto=format&fit=crop&w=1200&q=80",
+          "alt": "sandy beach with distant people and grassy dunes"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1755231907705-47c850dc5f22?auto=format&fit=crop&w=1200&q=80",
+          "alt": "calm ocean meeting a sandy beach with distant figures"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1754778805689-1bd1da87eb96?auto=format&fit=crop&w=1200&q=80",
+          "alt": "rocky coastline with tide pools and waves"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1734517455753-2bab9eaa9ee6?auto=format&fit=crop&w=1200&q=80",
+          "alt": "driftwood lying on a beach with the ocean beyond"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1639825502320-9e59b9748f99?auto=format&fit=crop&w=1200&q=80",
+          "alt": "footprints in the sand near the shoreline"
+        }
+      ]
+    },
+    {
+      "name": "Mirror, Mirror",
+      "meta": {
+        "subtitle": "reflection / transformation / community",
+        "palette": [
+          "#ECD8F0",
+          "#FDF5E6",
+          "#C0BECF"
+        ]
+      },
+      "tiles": [
+        {
+          "type": "word",
+          "text": "reflection"
+        },
+        {
+          "type": "word",
+          "text": "transformation"
+        },
+        {
+          "type": "word",
+          "text": "salon"
+        },
+        {
+          "type": "word",
+          "text": "glamour"
+        },
+        {
+          "type": "word",
+          "text": "community"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1706629503720-13cad35ce2e5?auto=format&fit=crop&w=1200&q=80",
+          "alt": "a hair salon with chairs and mirrors"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1637777277337-f114350fb088?auto=format&fit=crop&w=1200&q=80",
+          "alt": "a hair salon with chairs and neon signs"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1675034742143-151fc66c9d0b?auto=format&fit=crop&w=1200&q=80",
+          "alt": "a woman getting her hair styled in a mirror"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1639574658063-859c220019e6?auto=format&fit=crop&w=1200&q=80",
+          "alt": "a close up of a hair dryer on a table"
+        },
+        {
+          "type": "image",
+          "src": "https://images.unsplash.com/photo-1587477444258-096b2d514c12?auto=format&fit=crop&w=1200&q=80",
+          "alt": "brown hair comb on a white wooden table"
+        }
+      ]
+    }
+  ]
+}
