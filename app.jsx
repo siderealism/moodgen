@@ -3,9 +3,8 @@ const { useEffect, useMemo, useState } = React;
 /**
  * Responsive Moodboard Tileboard
  * - Full-bleed grid, square-ish tiles (fills entire viewport)
- * - Desktop: 3×4, Mobile (<640px): 2×4
- * - Image tiles span two columns while word tiles span one, packed with dense auto-flow
- * - First tile is a header showing selected Aesthetic × Place and a Refresh button
+ * - Desktop: 3×4 (rows × cols), Mobile (<640px): 4×2
+ * - Image tiles span two columns while word tiles span one; header tile is 1×1
  * - Remaining tiles are shuffled from the two selected categories
  * - Images fade in on load; subtle pop-in animation on refresh
  * - Includes defensive code for SSR and simple runtime sanity checks
@@ -35,8 +34,8 @@ function useWindowSize() {
 function useGrid() {
   const { w } = useWindowSize();
   const isMobile = w < 640;
-  const cols = isMobile ? 2 : 3;
-  const rows = 4;
+  const cols = isMobile ? 2 : 4;
+  const rows = isMobile ? 4 : 3;
   return { isMobile, cols, rows };
 }
 
@@ -135,7 +134,7 @@ function HeaderTile({ a, p, onRefresh }) {
   return (
     <div
       className="w-full h-full flex flex-col items-center justify-center gap-3 bg-white tile-wrap"
-      style={{ gridColumn: "span 2", animation: "tile-pop 420ms cubic-bezier(0.22, 1, 0.36, 1) both" }}
+      style={{ gridColumn: "span 1", animation: "tile-pop 420ms cubic-bezier(0.22, 1, 0.36, 1) both" }}
     >
       <div className="text-center">
         <div className="text-xs uppercase tracking-widest text-zinc-500">Moodboard</div>
@@ -164,7 +163,7 @@ function App() {
   const { cols, rows } = useGrid();
   const CONFIG = useConfig();
   const totalCells = cols * rows;
-  const headerSpan = 2;
+  const headerSpan = 1;
 
   // Shuffle nonce triggers reselection & re-render animations
   const [nonce, setNonce] = useState(0);
