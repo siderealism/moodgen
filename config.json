@@ -340,6 +340,158 @@
           "alt": "Zoolander - 2001"
         }
       ]
+    },
+    {
+      "name": "Take Ivy",
+      "tiles": [
+        {
+          "type": "word",
+          "text": "inherited",
+          "color": "#000080"
+        },
+        {
+          "type": "word",
+          "text": "understated",
+          "color": "#F5F5DC"
+        },
+        {
+          "type": "word",
+          "text": "exclusivity",
+          "color": "#FA8072"
+        },
+        {
+          "type": "word",
+          "text": "tradition",
+          "color": "#000080"
+        },
+        {
+          "type": "word",
+          "text": "privilege",
+          "color": "#F5F5DC"
+        },
+        {
+          "type": "image",
+          "src": "img/takeivy/Cruel Intentions - 1999.jpg",
+          "alt": "Cruel Intentions - 1999"
+        },
+        {
+          "type": "image",
+          "src": "img/takeivy/Gossip Girl 2007.jpg",
+          "alt": "Gossip Girl - 2007"
+        },
+        {
+          "type": "image",
+          "src": "img/takeivy/Metropolitan - 1990.png",
+          "alt": "Metropolitan - 1990"
+        },
+        {
+          "type": "image",
+          "src": "img/takeivy/Ralph Lauren - Ralph Lauren Polo x Wimbledon.png",
+          "alt": "Ralph Lauren - Ralph Lauren Polo x Wimbledon"
+        },
+        {
+          "type": "image",
+          "src": "img/takeivy/Ralph Lauren.png",
+          "alt": "Ralph Lauren"
+        },
+        {
+          "type": "image",
+          "src": "img/takeivy/Take Ivy.png",
+          "alt": "Take Ivy"
+        },
+        {
+          "type": "image",
+          "src": "img/takeivy/The Wolf of Wall Street - 2013.png",
+          "alt": "The Wolf of Wall Street - 2013"
+        }
+      ],
+      "meta": {
+        "subtitle": "inherited / tradition / privilege",
+        "palette": [
+          "#000080",
+          "#F5F5DC",
+          "#FA8072"
+        ]
+      }
+    },
+    {
+      "name": "Spiritual Hedonism",
+      "tiles": [
+        {
+          "type": "word",
+          "text": "transcendent",
+          "color": "#FF4500"
+        },
+        {
+          "type": "word",
+          "text": "hedonistic",
+          "color": "#8A2BE2"
+        },
+        {
+          "type": "word",
+          "text": "nomadic",
+          "color": "#F4A460"
+        },
+        {
+          "type": "word",
+          "text": "fusion",
+          "color": "#40E0D0"
+        },
+        {
+          "type": "word",
+          "text": "enlightenment",
+          "color": "#FF4500"
+        },
+        {
+          "type": "image",
+          "src": "img/spiritualhedonism/1992-New-Years-92_Martin-Glover.jpg",
+          "alt": "1992 New Year's 92 - Martin Glover"
+        },
+        {
+          "type": "image",
+          "src": "img/spiritualhedonism/1992-Vagator-Goa-1992-93_Nic-Space.jpg",
+          "alt": "1992 Vagator Goa 1992-93 - Nic Space"
+        },
+        {
+          "type": "image",
+          "src": "img/spiritualhedonism/Goa 90s - AndreasWagner.jpg",
+          "alt": "Goa 90s - Andreas Wagner"
+        },
+        {
+          "type": "image",
+          "src": "img/spiritualhedonism/Godself-2012-Alex-Grey-watermarked.jpeg",
+          "alt": "Godself - 2012 - Alex Grey (watermarked)"
+        },
+        {
+          "type": "image",
+          "src": "img/spiritualhedonism/Roland JP-8000.jpg",
+          "alt": "Roland JP-8000"
+        },
+        {
+          "type": "image",
+          "src": "img/spiritualhedonism/Shpongle - Are You Shpongled?.jpg",
+          "alt": "Shpongle - Are You Shpongled?"
+        },
+        {
+          "type": "image",
+          "src": "img/spiritualhedonism/The Beach - 2000 (3).png",
+          "alt": "The Beach - 2000"
+        },
+        {
+          "type": "image",
+          "src": "img/spiritualhedonism/The Beach - 2000 (5).png",
+          "alt": "The Beach - 2000"
+        }
+      ],
+      "meta": {
+        "subtitle": "transcendent / hedonistic / nomadic",
+        "palette": [
+          "#FF4500",
+          "#8A2BE2",
+          "#F4A460",
+          "#40E0D0"
+        ]
+      }
     }
   ],
   "places": [

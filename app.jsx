@@ -75,6 +75,20 @@ function randomColor() {
   return '#' + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
 }
 
+function isDarkColor(hex) {
+  if (typeof hex !== 'string') return false;
+  let c = hex.startsWith('#') ? hex.slice(1) : hex;
+  if (c.length === 3) {
+    c = c.split('').map((ch) => ch + ch).join('');
+  }
+  if (c.length !== 6) return false;
+  const r = parseInt(c.slice(0, 2), 16);
+  const g = parseInt(c.slice(2, 4), 16);
+  const b = parseInt(c.slice(4, 6), 16);
+  const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+  return yiq < 128;
+}
+
 // -------------------- Tiles --------------------
 function ImageTile({ src, alt }) {
   const [loaded, setLoaded] = useState(false);
@@ -117,9 +131,10 @@ function ImageTile({ src, alt }) {
 }
 
 function WordTile({ text, color }) {
+  const textClass = isDarkColor(color) ? 'text-white' : 'text-zinc-900';
   return (
     <div className="flex items-center justify-center w-full h-full" style={{ backgroundColor: color || "#EEE" }}>
-      <span className="text-zinc-900 text-2xl font-semibold tracking-wide select-none">{text}</span>
+      <span className={`${textClass} text-2xl font-semibold tracking-wide select-none`}>{text}</span>
     </div>
   );
 }
